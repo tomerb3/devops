@@ -14,7 +14,7 @@ pipelineJob ("Pipeline.$NEW_PROJECT_NAME") {
       
         activeChoiceReactiveParam('Cities') {
             description('Active Choices Reactive parameter')
-            filterable()
+            filterable(false)
       
             choiceType('SINGLE_SELECT')
             groovyScript {
