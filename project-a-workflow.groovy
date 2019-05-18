@@ -1,9 +1,21 @@
- node('linux') {
-            def zip_name = ''
-            currentBuild.result = 'SUCCESS'
-            stage("Git Checkout") 
-             {
-                           sh "echo hello"
-             }
+pipeline {
+    agent any
 
+    stages {
+        stage('Build') {
+            steps {
+                echo 'Building..'
+            }
+        }
+        stage('Test') {
+            steps {
+                echo 'Testing..'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Deploying....'
+            }
+        }
+    }
 }
