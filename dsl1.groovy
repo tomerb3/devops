@@ -5,7 +5,8 @@ pipelineJob ("Pipeline.$NEW_PROJECT_NAME") {
             filterable(false)
             choiceType('SINGLE_SELECT')
             groovyScript {
-                script('["Sao Paulo", "Rio de Janeiro", "Parana:selected", "Acre"]')
+              
+               script(readFileFromWorkspace('combo1'))
                 fallbackScript('return ["ERROR"]')
             }
         }
