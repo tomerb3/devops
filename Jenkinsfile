@@ -29,6 +29,26 @@ parameters {
         type: 'PT_CHECKBOX', 
         value:'One,Two,Three,Four,Five,Six,Seven,Eight,Nine,Ten', 
         visibleItemCount: 10)
+  
+     extendedChoice( 
+        defaultValue: 'none', 
+        description: '', 
+        multiSelectDelimiter: ',', 
+        name: 'Tags', 
+        quoteValue: false, 
+        saveJSONParameterToFile: false, 
+        type: 'PT_CHECKBOX', 
+        value:"""
+def gettags = ("git ls-remote -t https://github.com/tomerb3/devops.git").execute()
+return gettags.text.readLines().collect { 
+  it.split()[1].replaceAll('refs/tags/', '').replaceAll("\\^\\{\\}", '')
+}
+""", 
+        visibleItemCount: 10)
+  
+  
+  
+  
     }
 
 
