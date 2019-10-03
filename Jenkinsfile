@@ -1,18 +1,12 @@
-job:
-    name: 'cascade-choice-example'
-
-    parameters:
-      - string:
-          name: STR_PARAM
-          default: test
-      - cascade-choice:
-          project: 'cascade-choice-example'
-          name: CASCADE_CHOICE
-          script: |
-            return ['foo:selected', 'bar']
-          description: "A parameter named CASCADE_CHOICE which options foo and bar."
-          visible-item-count: 1
-          fallback-script: |
-            return ['Something Wrong']
-          reference: STR_PARAM
-          choice-type: single
+parameters {
+    extendedChoice( 
+        defaultValue: 'One,Two,Three,Four', 
+        description: '', 
+        multiSelectDelimiter: ',', 
+        name: 'SAMPLE_EXTENDED_CHOICE', 
+        quoteValue: false, 
+        saveJSONParameterToFile: false, 
+        type: 'PT_CHECKBOX', 
+        value:'One,Two,Three,Four,Five,Six,Seven,Eight,Nine,Ten', 
+        visibleItemCount: 10)
+    }
