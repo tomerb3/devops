@@ -8,7 +8,7 @@ def deployment_configs_build_tag=''
 pipeline{
   agent {
     node {
-      label 'linux'
+     
    }
   }
   options{
